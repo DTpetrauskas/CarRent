@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.carrent;
+package com.mycompany.administrator;
 
+import com.mycompany.data.Car;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -14,36 +15,39 @@ import java.util.List;
  *
  * @author TAURAS
  */
-public class Administrator  {
+public class Administrator {
 
     public static List<Car> carList = new ArrayList<Car>();
 
-    
+}
 
-    
-    
-    
-    private List<Car> makeList() {
-
-        for (int i = 0; i < 10; i++) {
-            addCar();
-            
-        }
-    }
-
-    public void addCar() {
+public void addCar() {
 
         carList.add(new Car(1, "123", "214", CarPrice.Medium, rentAvailible));
     }
 
-    public void removeCar(int carNumber) {
-        if (Arrays.asList(carList).contains(carNumber)) {
+      public void setRezervation(int ID, int dayStart, int dayEnd) {
 
-            carList.remove(Arrays.asList(carList).get(carNumber));
-        } else {
-            System.out.println("NO number");
+        for (int i = 0; i < carList.size(); i++) {
+
+            if (carList.get(i).getID() == ID) {
+                for (int a = dayStart; a <= dayEnd; a++) {
+                    if (!carList.get(i).getRentAvailible()[a]) {
+                        System.out.println(" Car " + a + " day is not availible");
+                        break;
+
+                    } else {
+                        
+
+                        carList.get(i).getRentAvailible()[a] = false;
+                        System.out.println("Car " + carList.get(i).getPlateNumber() + " is reserved for " + a + "day.");
+                    }
+
+                }
+            } else {
+                System.out.println("Wrong ID");
+            }
+
         }
-
-    }
 
 }
