@@ -6,6 +6,9 @@
 package com.mycompany.usage;
 
 import com.mycompany.administrator.Administrator;
+import com.mycompany.data.Car;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,16 +17,17 @@ import com.mycompany.administrator.Administrator;
 public class UserMethods extends Administrator {
 
     @Override
-    public void showAll() {
-
+    public List<Car> showAll() {
+ List<Car> allList = new ArrayList<>();
         for (int i = 0; i < carList.size(); i++) {
-            System.out.println(carList.get(i).toString());
-        }
 
-    }
+            allList.add(carList.get(i));
+
+        }
+        return allList;
 
     @Override
-    public void setRezervation(int ID, int dayStart, int dayEnd) {
+    public boolean setRezervation(int ID, int dayStart, int dayEnd) {
 
         for (int i = 0; i < carList.size(); i++) {
 

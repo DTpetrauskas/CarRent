@@ -10,6 +10,6 @@ package com.mycompany.data;
  * @author TAURAS
  */
 public enum CarPrice {
-    Small, Medium
+    Economy, Luxury
     
 }

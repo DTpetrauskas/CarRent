@@ -1,10 +1,14 @@
+package unittests.usage;
 
-import com.mycompany.administrator.Administrator;
+
+
 import com.mycompany.data.Car;
 import com.mycompany.usage.UserMethods;
+import java.util.ArrayList;
 
 import java.util.List;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,7 +21,33 @@ import org.junit.jupiter.api.Test;
  */
 public class AvailabilityTest {
 
-    private List<Car> carList;
+    private List<Car> list;
     private UserMethods methods;
+    
+    @Before
+	public void init() {
+		list = new ArrayList<>();
+
+		methods = new UserMethods(){
+
+			@Override
+			public List<Car> setRezervation(int ID) {
+				return list;
+			}
+
+			@Override
+			public Book getByISBN(String codeISBN) {
+				throw new RuntimeException();
+			}
+
+			@Override
+			public List<Book> getAllBooks() {
+				throw new RuntimeException();
+			}
+		};
+
+		library = new Library(resource);
+
+	}
     
 }
