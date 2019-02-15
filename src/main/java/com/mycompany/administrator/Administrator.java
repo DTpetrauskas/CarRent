@@ -39,19 +39,20 @@ public class Administrator {
     }
 
     public void rezervation(int ID, int startDay, int endDay) {
-        DataOutput        for (int i = 0; i < carList.size(); i++) {
+        DataOutput out = new DataOutput();
+                
+                for (int i = 0; i < carList.size(); i++) {
             if (carList.get(i).getID() == ID) {
 
                 if (checkRezervation(i, startDay, endDay)) {
 
-                   
-                }
+                   out.success(ID);
+                } else ;
 
+            } else if (carList.get(i).getID() != ID) {
+            
             }
-            if (carList.contains(carList.get(i).getID())) {
-                System.out.println("Wrong ID");
-
-            }
+           
 
         }
 

@@ -10,16 +10,16 @@ package com.mycompany.data;
  * @author TAURAS
  */
 public class DataOutput {
-   public void success(String plateNumber){
+   public void success(int ID){
     
-       System.out.println("Car " + plateNumber + " rezervation success");
+       System.out.println("Car rezervation success");
     
     }
    
    
-   public void fail(String plateNumber){
+   public void fail(int ID){
    
-   
+   System.out.println("Car rezervation fail");
    
    }
 }
