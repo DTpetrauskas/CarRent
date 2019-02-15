@@ -11,6 +11,10 @@ package com.mycompany.data;
  */
 public class DataOutputImpl {
 
-    public void success(RentDataOutput out){}
- public void fail(RentDataOutput out){}
+    public void success(int ID){
+    
+    
+    
+    }
+ public void fail(int ID){}
 }

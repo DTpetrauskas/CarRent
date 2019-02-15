@@ -44,11 +44,11 @@ public class Administrator {
 
                 if (checkRezervation(i, startDay, endDay)) {
 
-                    out1.success(out);
-                } else out1.fail(out);
+                    out1.success(ID);
+                } else out1.fail(ID);
 
             } else if (carList.get(i).getID() != ID) {
-out.fail(ID);
+out1.fail(ID);
             }
 
         }
