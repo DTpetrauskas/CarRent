@@ -7,6 +7,7 @@ package com.mycompany.administrator;
 
 import com.mycompany.data.Car;
 import com.mycompany.data.CarPrice;
+import com.mycompany.data.DataOutput;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -17,13 +18,14 @@ import java.util.List;
  */
 public class Administrator {
 
-    boolean check;
+   
 
-    public static List<Car> carList = new ArrayList<Car>();
+    private static List<Car> carList = new ArrayList<Car>();
 
-    public void addCar() {
+    public void addCar(int ID, String brand, String plateNumber, CarPrice carPrice) {
 
-        carList.add(new Car(1, "123", "214", CarPrice.Economy));
+        carList.add(new Car(ID, brand, plateNumber, carPrice));
+
     }
 
     public List<Car> showAll() {
@@ -37,27 +39,23 @@ public class Administrator {
     }
 
     public void rezervation(int ID, int startDay, int endDay) {
-
-        for (int i = 0; i < carList.size(); i++) {
+        DataOutput        for (int i = 0; i < carList.size(); i++) {
             if (carList.get(i).getID() == ID) {
-                
-            
+
                 if (checkRezervation(i, startDay, endDay)) {
-                    
-                    System.out.println("Rezervation success");
-                        }
 
-                    
-                } else {
-                    System.out.println("Wrong ID");
-
+                   
                 }
+
+            }
+            if (carList.contains(carList.get(i).getID())) {
+                System.out.println("Wrong ID");
 
             }
 
         }
 
-    
+    }
 
     public boolean checkRezervation(int car, int startDay, int endDay) {
 

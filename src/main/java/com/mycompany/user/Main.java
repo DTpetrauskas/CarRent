@@ -6,16 +6,18 @@
 package com.mycompany.user;
 
 import com.mycompany.administrator.Administrator;
+import com.mycompany.data.CarPrice;
 
 /**
  *
  * @author TAURAS
  */
 public class Main {
-    public static void main(String[] args) {
-        
-		      Administrator admin = new Administrator();
 
-		admin.rezervation(1, 20, 30);
+    public static void main(String[] args) {
+
+        Administrator admin = new Administrator();
+        admin.addCar(1, "BMW", "!$@#$", CarPrice.Luxury);
+        admin.rezervation(1, 20, 30);
     }
 }
