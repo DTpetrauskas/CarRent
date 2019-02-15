@@ -9,17 +9,8 @@ package com.mycompany.data;
  *
  * @author TAURAS
  */
-public class DataOutput {
-   public void success(int ID){
-    
-       System.out.println("Car rezervation success");
-    
-    }
-   
-   
-   public void fail(int ID){
-   
-   System.out.println("Car rezervation fail");
-   
-   }
+public class DataOutputImpl {
+
+    public void success(RentDataOutput out){}
+ public void fail(RentDataOutput out){}
 }

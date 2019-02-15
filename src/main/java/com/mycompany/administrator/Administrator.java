@@ -7,7 +7,7 @@ package com.mycompany.administrator;
 
 import com.mycompany.data.Car;
 import com.mycompany.data.CarPrice;
-import com.mycompany.data.DataOutput;
+import com.mycompany.data.DataOutputImpl;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -17,8 +17,6 @@ import java.util.List;
  * @author TAURAS
  */
 public class Administrator {
-
-   
 
     private static List<Car> carList = new ArrayList<Car>();
 
@@ -39,20 +37,19 @@ public class Administrator {
     }
 
     public void rezervation(int ID, int startDay, int endDay) {
-        DataOutput out = new DataOutput();
-                
-                for (int i = 0; i < carList.size(); i++) {
+        DataOutputImpl out1 = new DataOutputImpl();
+
+        for (int i = 0; i < carList.size(); i++) {
             if (carList.get(i).getID() == ID) {
 
                 if (checkRezervation(i, startDay, endDay)) {
 
-                   out.success(ID);
-                } else ;
+                    out1.success(out);
+                } else out1.fail(out);
 
             } else if (carList.get(i).getID() != ID) {
-            
+out.fail(ID);
             }
-           
 
         }
 
