@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.carrent;
+package com.mycompany.user;
+
+import com.mycompany.administrator.Administrator;
 
 /**
  *
@@ -12,5 +14,8 @@ package com.mycompany.carrent;
 public class Main {
     public static void main(String[] args) {
         
+		      Administrator admin = new Administrator();
+
+		admin.rezervation(1, 20, 30);
     }
 }

@@ -21,33 +21,33 @@ import org.junit.Before;
  */
 public class AvailabilityTest {
 
-    private List<Car> list;
-    private UserMethods methods;
+   
     
-    @Before
-	public void init() {
-		list = new ArrayList<>();
-
-		methods = new UserMethods(){
-
-			@Override
-			public List<Car> setRezervation(int ID) {
-				return list;
-			}
-
-			@Override
-			public Book getByISBN(String codeISBN) {
-				throw new RuntimeException();
-			}
-
-			@Override
-			public List<Book> getAllBooks() {
-				throw new RuntimeException();
-			}
-		};
-
-		library = new Library(resource);
-
-	}
     
+//    @Before
+//	public void init() {
+//		list = new ArrayList<>();
+//
+//		methods = new UserMethods(){
+//
+//			@Override
+//			public List<Car> setRezervation(int ID) {
+//				return list;
+//			}
+//
+//			@Override
+//			public Book getByISBN(String codeISBN) {
+//				throw new RuntimeException();
+//			}
+//
+//			@Override
+//			public List<Book> getAllBooks() {
+//				throw new RuntimeException();
+//			}
+//		};
+//
+//		library = new Library(resource);
+//
+//	}
+//    
 }

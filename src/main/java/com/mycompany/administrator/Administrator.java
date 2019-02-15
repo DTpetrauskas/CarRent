@@ -8,7 +8,6 @@ package com.mycompany.administrator;
 import com.mycompany.data.Car;
 import com.mycompany.data.CarPrice;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import java.util.List;
 
@@ -17,7 +16,8 @@ import java.util.List;
  * @author TAURAS
  */
 public class Administrator {
-     boolean check;
+
+    boolean check;
 
     public static List<Car> carList = new ArrayList<Car>();
 
@@ -36,40 +36,42 @@ public class Administrator {
         return allList;
     }
 
-    public boolean checkRezervation(int ID, int startDay, int endDay) {
-        boolean bo;
+    public void rezervation(int ID, int startDay, int endDay) {
+
         for (int i = 0; i < carList.size(); i++) {
-
             if (carList.get(i).getID() == ID) {
-                for (int a = startDay; a <= endDay; a++) {
-                    if (carList.get(i).getRentAvailible()[a]) {
+                
+            
+                if (checkRezervation(i, startDay, endDay)) {
+                    
+                    System.out.println("Rezervation success");
+                        }
 
-                        carList.get(i).getRentAvailible()[a]= false;
-
-                    } else {
-
-                        return false;
-
-                    }
+                    
+                } else {
+                    System.out.println("Wrong ID");
 
                 }
+
+            }
+
+        }
+
+    
+
+    public boolean checkRezervation(int car, int startDay, int endDay) {
+
+        for (int a = startDay; a <= endDay; a++) {
+            if (carList.get(car).getRentAvailible()[a]) {
+
+                carList.get(car).getRentAvailible()[a] = false;
+
             } else {
-                System.out.println("Wrong ID");
+                System.out.println("");
                 return false;
             }
 
         }
-return true;
-    }
-
-    public List<Car> rezervation(){
-        
-        List<Car> list = new ArrayList<>();
-        for (int i = 0; i < carList.size(); )
-    
-    
-    
-    
-    
+        return true;
     }
 }
