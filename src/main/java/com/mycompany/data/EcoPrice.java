@@ -9,7 +9,7 @@ package com.mycompany.data;
  *
  * @author TAURAS
  */
-public class SmallPrice implements ClassCost{
+public class EcoPrice implements ClassCost{
 
   
 

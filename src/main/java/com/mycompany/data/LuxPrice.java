@@ -9,7 +9,7 @@ package com.mycompany.data;
  *
  * @author TAURAS
  */
-public class MediumPrice implements ClassCost {
+public class LuxPrice implements ClassCost {
 
     @Override
     public int price() {

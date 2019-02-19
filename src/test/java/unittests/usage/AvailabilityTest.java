@@ -2,12 +2,7 @@ package unittests.usage;
 
 
 
-import com.mycompany.data.Car;
-import com.mycompany.usage.UserMethods;
-import java.util.ArrayList;
 
-import java.util.List;
-import org.junit.Before;
 
 
 /*

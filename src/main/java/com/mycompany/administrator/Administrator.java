@@ -8,6 +8,9 @@ package com.mycompany.administrator;
 import com.mycompany.data.Car;
 import com.mycompany.data.CarPrice;
 import com.mycompany.data.DataOutputImpl;
+import com.mycompany.data.Day;
+import com.mycompany.ui.UIHandler;
+
 import java.util.ArrayList;
 
 import java.util.List;
@@ -18,7 +21,13 @@ import java.util.List;
  */
 public class Administrator {
 
-    private static List<Car> carList = new ArrayList<Car>();
+    public static List<Car> carList = new ArrayList<Car>();
+    public static List<Day> dayList = new ArrayList<Day>();
+    private UIHandler ui;
+
+    public Administrator(UIHandler ui) {
+        this.ui = ui;
+    }
 
     public void addCar(int ID, String brand, String plateNumber, CarPrice carPrice) {
 
@@ -37,18 +46,19 @@ public class Administrator {
     }
 
     public void rezervation(int ID, int startDay, int endDay) {
-        DataOutputImpl out1 = new DataOutputImpl();
 
         for (int i = 0; i < carList.size(); i++) {
             if (carList.get(i).getID() == ID) {
 
                 if (checkRezervation(i, startDay, endDay)) {
 
-                    out1.success(ID);
-                } else out1.fail(ID);
+                    ui.out("Success: " + ID);
+                } else {
+                    ui.out("Fail: " + ID);
+                }
 
             } else if (carList.get(i).getID() != ID) {
-out1.fail(ID);
+                ui.out("Another fail: " + ID);
             }
 
         }
@@ -63,11 +73,22 @@ out1.fail(ID);
                 carList.get(car).getRentAvailible()[a] = false;
 
             } else {
-                System.out.println("");
+                ui.outEmpty();
                 return false;
             }
 
         }
         return true;
+    }
+
+    public void showDayInterval(int car, int startDay, int endDay) {
+
+        for (int d = startDay; d <= endDay; d++) {
+            carList.get(car).getRentAvailible()[d]
+    
+                    
+
+    
+        }
     }
 }

@@ -8,20 +8,23 @@ package com.mycompany.user;
 import com.mycompany.administrator.Administrator;
 import com.mycompany.data.CarPrice;
 import com.mycompany.data.DataOutputImpl;
-
-
+import com.mycompany.ui.SwingUI;
+import com.mycompany.ui.UIHandler;
+import java.util.Scanner;
 
 /**
  *
  * @author TAURAS
  */
 public class Main {
-    
+
     public static void main(String[] args) {
-        DataOutputImpl out = new DataOutputImpl();
-        
-        
-        Administrator admin = new Administrator();
+
+        Scanner keyboard = new Scanner(System.in);
+
+        UIHandler out = new SwingUI();
+
+        Administrator admin = new Administrator(out);
         admin.addCar(1, "BMW", "!$@#$", CarPrice.Luxury);
         admin.rezervation(1, 20, 30);
     }

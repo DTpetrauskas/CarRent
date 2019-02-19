@@ -9,7 +9,6 @@ package com.mycompany.data;
  *
  * @author TAURAS
  */
-public enum CarPrice {
-    Economy, Luxury, SUV
+public class Filter {
     
 }
